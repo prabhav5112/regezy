@@ -47,53 +47,71 @@ function display() {
     let inText= document.getElementById("input-text").value;
     document.getElementById("ss-box").innerText = inText;
     var strToArr = inText.split("");
-    regex(1)
+    regex(1);
     char_colors(strToArr)
 }
 function count() {
     let selected_regex = /^(char).*1$/;
-    let selected =[], all=document.getElementsByTagName('*');
+    let selected =[], all=document.getElementById("display").getElementsByTagName('*');
     for (let i=all.length-1;i>=0; i--) if ((all[i].id.match(selected_regex))) selected.push(all[i]);
     return selected;
 }
 function regex(val=0) {
     let i = count();
-    //console.log(i.length)
     let index_regex = /(\d+)(?=\D)/
+    if (val == 1){
+        document.getElementById("regular-expression").innerText = '';
+    }
     if(i.length == 2){
         let ending_index = parseInt(i[0].id.match(index_regex)[0]);
         let starting_index = parseInt(i[1].id.match(index_regex)[0]);
         let req = document.getElementById("ss-box").innerText.slice(starting_index,ending_index+1);
+        let len = req.length;
+        req = filter(req);
         if(document.getElementById('menu-input1').checked) {
-        re = "/(" + req + ")/";
+            re = "/(" + req + ")/";
         }
         else if(document.getElementById('menu-input2').checked) {
-        re = "/.{" +starting_index+ "}(" +req+ ")/"
+            re = "/.{" +starting_index+ "}(" +req+ ")/"
         }
         else if(document.getElementById('menu-input3').checked) {
-        re = "/(\\s.{"+ req.length +"}$|((\\s.{"+ req.length +"})(?=\\s)))/"
+            re = "/(\\s.{"+ len +"}$|((\\s.{"+ len +"})(?=\\s)))/"
         }
         document.getElementById("regular-expression").innerText = re;
     }
     else if(i.length == 1){
         let index = parseInt(i[0].id.match(index_regex)[0]);
-        //console.log(index)
         let req = document.getElementById("ss-box").innerText[index];
+        req = filter(req);
         if(document.getElementById('menu-input1').checked) {
-        re = "/(" + req + ")/";
+            re = "/(" + req + ")/";
         }
         else if(document.getElementById('menu-input2').checked) {
-        re = "/.{" +index+ "}(" +req+ ")/"
+            re = "/.{" +index+ "}(" +req+ ")/"
         }
         else if(document.getElementById('menu-input3').checked) {
-        re = "/(\\s.{"+ req.length +"}$|((\\s.{"+ req.length +"})(?=\\s)))/"
+            re = "/(\\s.{"+ "1" +"}$|((\\s.{"+ "1" +"})(?=\\s)))/"
         }
         document.getElementById("regular-expression").innerText = re;
-    }
-    if (val == 1){
-        document.getElementById("regular-expression").innerText = '';
     }
     else {
         return -1;
     }
+}
+function filter(req) {
+    let list = ["\\\\","\\s","\\+", "\\*", "\\{","\\}","\\(","\\)","\\[","\\]","\\?","\\^","\\|","\\.","\\$"];
+    let i = 0;
+    while(i < list.length) {
+        let reg_replace = new RegExp(list[i], "g");;
+        let escaped_string = "";
+        if(i > 0) {
+            escaped_string = list[i];
+            escaped_string = "\\" + escaped_string.slice(1);
+        } else {
+            escaped_string = "\\\\";
+        }
+        req = req.replace(reg_replace, escaped_string);
+        i++;
+    }
+    return req;
 }

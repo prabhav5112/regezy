@@ -25,10 +25,11 @@ body {
   position: absolute;
   font-family: 'Cutive Mono';
   text-align: center;
-  top: 8px;
-  left: 16px;
-  width:150px;
-  font-size: 200%;
+  top: 1%;
+  left: 1.5%;
+  width:7%;
+  height:6%;
+  font-size: 150%;
   color:black;
   background-color: rgb(196, 126, 230);
   border-radius: 20px;
@@ -99,6 +100,7 @@ body {
   margin:left;
   margin-top:1%;
   width:90%;
+  margin-bottom:0;
   padding-top:0.2%;
   padding-left:2%;
   height:20%;
@@ -108,8 +110,10 @@ body {
 #char-selection-box{
   user-select: text;
   margin:left;
+  margin-bottom: 1%;
   width:90%;
   padding-left:2%;
+  padding-bottom:0.4%;
   padding-top:0.2%;
   height:20%;
   background-color: rgba(196, 126, 230,0.3);
@@ -135,8 +139,7 @@ a:hover{
 }
 
 #caption{
-  font-size:15px;
-  padding-bottom:5px;
+  font-size:55%;
   font-family: 'Cutive Mono';
   color:black;
 }
@@ -144,7 +147,8 @@ a:hover{
 #Heading{
   border-radius: 20px;
   font-family: 'Style Script', cursive;
-  font-size: 75px;
+  font-size: 350%;
+  margin-bottom: 0;
   text-align: center;
   color: white ;
 }
