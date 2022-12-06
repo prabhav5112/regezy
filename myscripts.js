@@ -84,7 +84,7 @@ function regex(val=0) {
             re = "/(\\s.{"+ len +"}$|((\\s.{"+ len +"})(?=\\s)))/"
         }
         else if (document.getElementById('menu-input4').checked){
-            re = "/({"+ req.slice(0,1) + "}.*{"+ req.slice(-1) + "}/"
+            re = "/("+ req.slice(0,1) + ").*?("+ req.slice(-1) + ")/"
         }
         document.getElementById("regular-expression").innerText = re;
     }
