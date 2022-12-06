@@ -51,10 +51,26 @@
                 <div id="char-selection-box">
                     <span style="display:block;font-size: 100%;" id="display"></span>
                 </div>
+                <div id = "legend">
+                    <div class = "box red col-xs-6"></div>
+                    <p style="padding-left:0.5%;padding-right:1.5%;font-size:60%"> Characters</p>
+                    <div class = "box orange col-xs-6"></div>
+                    <p style="padding-left:0.5%;padding-right:1.5%;font-size:60%"> Digits</p>
+                    <div class = "box green col-xs-6"></div>
+                    <p style="padding-left:0.5%;padding-right:1.5%;font-size:60%"> Symbols</p>
+                    <div class = "box yellow col-xs-6"></div>
+                    <p style="padding-left:0.5%;padding-right:1.5%;font-size:60%"> Whitespace</p>
+                </div>
             </div>
             <div id="regex-gen">
                 <p>Regular expression</p>
-                <div id="regular-expression">
+                <div id="regular-expression-box">
+                    <div id = "regular-expression" class="col-xs-6">
+                    </div>
+                    <div id = "copy-button" class="col-xs-6">
+                        <img src="copy-button.png" onclick=copy_regex() width="20" style="text-align:right">
+                        <img id = "tick-mark" src="tick-mark.png" style="visibility:hidden;" width = 15>
+                    </div>
                 </div>
             </div>
         </div>

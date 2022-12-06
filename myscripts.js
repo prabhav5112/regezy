@@ -61,6 +61,7 @@ function regex(val=0) {
     let index_regex = /(\d+)(?=\D)/
     if (val == 1){
         document.getElementById("regular-expression").innerText = '';
+        return 0;
     }
     if(i.length == 2){
         let ending_index = parseInt(i[0].id.match(index_regex)[0]);
@@ -115,3 +116,24 @@ function filter(req) {
     }
     return req;
 }
+
+function copy_regex() {
+    // Get the text field
+    var copyText = document.getElementById("regular-expression");
+  
+    // Select the text field
+    var regex = copyText.innerText;
+    navigator.clipboard.writeText(regex);
+    
+    // Alert the copied text
+    if (regex != ""){
+        document.getElementById("tick-mark").style.visibility = "visible";
+        setTimeout(function() {document.getElementById("tick-mark").style.visibility = "hidden";},2000);
+    }
+  }
+
+  document.addEventListener("keydown", ({key}) => {
+    if (key === "Escape"){
+        display();
+    }
+})
