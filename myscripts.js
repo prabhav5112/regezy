@@ -62,11 +62,13 @@ function count() {
 function regex(val=0) {
     let i = count();
     let index_regex = /(\d+)(?=\D)/
+    document.getElementById("menu-input4").disabled=true;
     if (val == 1){
         document.getElementById("regular-expression").innerText = '';
         return 0;
     }
     if(i.length == 2){
+        document.getElementById("menu-input4").disabled=false;
         let ending_index = parseInt(i[0].id.match(index_regex)[0]);
         let starting_index = parseInt(i[1].id.match(index_regex)[0]);
         let req = document.getElementById("ss-box").innerText.slice(starting_index,ending_index+1);
@@ -80,6 +82,9 @@ function regex(val=0) {
         }
         else if(document.getElementById('menu-input3').checked) {
             re = "/(\\s.{"+ len +"}$|((\\s.{"+ len +"})(?=\\s)))/"
+        }
+        else if (document.getElementById('menu-input4').checked){
+            re = "/({"+ req.slice(0,1) + "}.*{"+ req.slice(-1) + "}/"
         }
         document.getElementById("regular-expression").innerText = re;
     }
@@ -135,7 +140,7 @@ function copy_regex() {
     }
   }
 
-  document.addEventListener("keydown", ({key}) => {
+document.addEventListener("keydown", ({key}) => {
     if (key === "Escape"){
         display();
     }

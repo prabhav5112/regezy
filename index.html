@@ -27,19 +27,23 @@
                     <fieldset id="menu-option-list">
                         <legend style = "margin-left:10px;padding-left:5px;">What are you trying to match using regex</legend>
                     
-                        <div style = "margin:8%;">
+                        <div style = "margin:6%;">
                             <input type="radio" onclick="regex()" id="menu-input1" name="menu-input" checked>
                             <label for="substr">Substring in the given string</label>
                         </div>
                     
-                        <div style = "margin:8%">
+                        <div style = "margin:6%">
                             <input type="radio" onclick="regex()" id="menu-input2" name="menu-input">
                             <label for="substr-at-indx">Substring at the same position as in the given string</label>
                         </div>
-                        <div style = "margin:8%">
+                        <div style = "margin:6%">
                             <input type="radio" onclick="regex()" id="menu-input3" name="menu-input">
                             <label for="generic-match">Match for a general expression</label>
-                            </div>
+                        </div>
+                        <div style = "margin:6%">
+                            <input type="radio" onclick="regex()" id="menu-input4" name="menu-input" disabled="true">
+                            <label for="match-btwn-two-char">Match between two characters</label>
+                        </div>
                     </fieldset>
                 </div>
             </div>
