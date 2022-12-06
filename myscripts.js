@@ -1,6 +1,9 @@
 function newFunc(e){
+    console.log(e.id)
     if (e.id.slice(-1) == 0){
-        e.style.backgroundColor = 'currentColor';
+        var color = e.style.color;
+        e.style.color = "black";
+        e.style.backgroundColor = color;
         e.id = e.id.replace(/.$/,"1")
     }
     else {
@@ -19,7 +22,7 @@ function char_colors(strToArr){
     reference.innerHTML = "";
     while (i < strToArr.length){
         let tag = document.createElement("a")
-        var letter = ["red", "orange", "green","yellow","brown"];
+        var letter = ["lightblue", "orange", "green","yellow","brown"];
         if (strToArr[i].match(letters)){
             tag.style.color = letter[0];
             tag.id = "char-"+ i + "-" +letter[0] + "-" + strToArr[i] + "-0";

@@ -18,6 +18,7 @@ body {
 #Introduction{
   height:100vh;
   width:100vw;
+  background-color: blue;
 
 }
 
@@ -112,6 +113,7 @@ body {
   margin:left;
   margin-bottom: 1%;
   width:90%;
+  
   padding-left:2%;
   padding-bottom:0.4%;
   padding-top:0.2%;
@@ -134,8 +136,8 @@ body {
   clear: both;
 }
 
-.red {
-  background-color: red;
+.lightblue {
+  background-color: lightblue;
 }
 
 .green {
@@ -151,8 +153,8 @@ body {
 }
 
 a:hover{
-  color:black;
-  background-color: currentColor;
+  /*background-color: currentColor;*/
+  border:2px solid black;
 }
 #tick-mark:hover{
   cursor:default;
