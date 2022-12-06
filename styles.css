@@ -17,9 +17,8 @@ body {
 
 #Introduction{
   height:100vh;
+  min-height:100%;
   width:100vw;
-  background-color: blue;
-
 }
 
 #Title{
@@ -28,9 +27,7 @@ body {
   text-align: center;
   top: 1%;
   left: 1.5%;
-  width:7%;
-  height:6%;
-  font-size: 150%;
+  font-size: 1.5rem;
   color:black;
   background-color: rgb(196, 126, 230);
   border-radius: 20px;
@@ -189,9 +186,10 @@ a:hover{
 }
 
 #caption{
-  font-size:55%;
   font-family: 'Cutive Mono';
   color:black;
+  line-height:0.5rem;
+  font-size:medium;
 }
 
 #Heading{

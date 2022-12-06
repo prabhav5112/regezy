@@ -7,6 +7,7 @@ function newFunc(e){
         e.id = e.id.replace(/.$/,"1")
     }
     else {
+        e.style.color = e.style.backgroundColor;
         e.style.backgroundColor = '';
         e.id = e.id.replace(/.$/,"0")
     }
