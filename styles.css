@@ -100,7 +100,8 @@ body {
   margin-bottom:0;
   padding-top:0.2%;
   padding-left:2%;
-  height:20%;
+  min-height:3vh;
+  max-height: 10%;
   background-color: rgba(196, 126, 230,0.3);
 }
 
@@ -109,11 +110,11 @@ body {
   margin:left;
   margin-bottom: 1%;
   width:90%;
-  
   padding-left:2%;
   padding-bottom:0.4%;
   padding-top:0.2%;
-  height:20%;
+  min-height:3vh;
+  max-height:10%;
   background-color: rgba(196, 126, 230,0.3);
 }
 
