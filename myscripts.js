@@ -129,7 +129,7 @@ function filter(req) {
 function copy_regex() {
     // Get the text field
     var copyText = document.getElementById("regular-expression");
-  
+
     // Select the text field
     var regex = copyText.innerText;
     navigator.clipboard.writeText(regex);
@@ -139,7 +139,7 @@ function copy_regex() {
         document.getElementById("tick-mark").style.visibility = "visible";
         setTimeout(function() {document.getElementById("tick-mark").style.visibility = "hidden";},2000);
     }
-  }
+}
 
 document.addEventListener("keydown", ({key}) => {
     if (key === "Escape"){
