@@ -3,21 +3,14 @@
   --bgcolor: rgba(0, 0, 0,0.6);
   --white: #ffffff;
   --bg-color: rgb(27, 23, 5);
-}
-
-body {
-    margin: 0;
-    background-color: var(--blue);
-}
-* {
-  margin: 0;
-  padding: 0;
   --FadeInSpeed: 0.5s;
 }
 
+
 #Introduction{
-  height:100vh;
-  min-height:100%;
+  height:max(120vh,120vw);
+  flex-direction: column;
+  justify-content: space-between;
   width:100vw;
 }
 
